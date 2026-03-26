@@ -3,106 +3,150 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Chorga Funktionen | Liedverwaltung, Termine und Chororganisation</title>
-  <meta name="description" content="Funktionsübersicht von Chorga: Liedverwaltung, Probenstand, Termine, Rückmeldungen, News-Feed, Rollen und Berechtigungen für Chöre und Gemeinden.">
+  <title>Chorga Funktionen | Chor-App für Liedverwaltung, Termine und Rückmeldungen</title>
+  <meta name="description" content="Chorga ist die Chor-App für Liedverwaltung, Proben, Gottesdienste, Termine, Rückmeldungen und Rollen in Gemeinden und Chören.">
+  <meta name="keywords" content="Chorga, Chor-App, Liedverwaltung, Proben, Gottesdienste, Terminplanung, Rueckmeldungen, Gemeindechor, Chormappe">
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
   <link rel="canonical" href="https://chorga-nak.de/funktionen/">
-  <meta property="og:type" content="article">
+  <meta property="og:type" content="website">
   <meta property="og:site_name" content="Chorga">
   <meta property="og:locale" content="de_DE">
-  <meta property="og:title" content="Chorga Funktionen">
-  <meta property="og:description" content="Die wichtigsten Funktionen der Chor-App Chorga im Überblick.">
+  <meta property="og:title" content="Chorga Funktionen | Chor-App für Liedverwaltung, Termine und Rückmeldungen">
+  <meta property="og:description" content="Liedgut, Proben, Gottesdienste, Termine, Rückmeldungen und Rollen in einer gemeinsamen Chor-App statt in verstreuten Tabellen und Chats.">
   <meta property="og:url" content="https://chorga-nak.de/funktionen/">
-  <meta property="og:image" content="https://chorga-nak.de/icons/Icon-512.png">
+  <meta property="og:image" content="https://chorga-nak.de/icons/Icon-192.png">
+  <meta property="og:image:alt" content="Chorga Logo">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Chorga Funktionen">
-  <meta name="twitter:description" content="Liedverwaltung, Termine, Rückmeldungen, News und Berechtigungen in einer App.">
+  <meta name="twitter:title" content="Chorga Funktionen | Chor-App für Liedverwaltung, Termine und Rückmeldungen">
+  <meta name="twitter:description" content="Digitale Chororganisation für Liedgut, Proben, Gottesdienste, Termine, Rückmeldungen und Rollen.">
+  <meta name="twitter:image" content="https://chorga-nak.de/icons/Icon-192.png">
   <style>
     :root {
-      --bg: #f5efe3;
-      --panel: rgba(255, 252, 246, 0.88);
-      --ink: #132033;
-      --muted: #445166;
-      --line: rgba(19, 32, 51, 0.12);
+      --ink: #12233c;
+      --muted: #50627d;
+      --surface: rgba(255, 255, 255, 0.82);
+      --surface-strong: rgba(255, 255, 255, 0.92);
+      --line: rgba(18, 35, 60, 0.1);
       --brand: #0d47a1;
-      --brand-soft: #dce8ff;
-      --accent: #d66c2f;
-      --shadow: 0 24px 60px rgba(19, 32, 51, 0.12);
+      --brand-deep: #0a3170;
+      --brand-soft: rgba(13, 71, 161, 0.08);
+      --accent: #1e8f89;
+      --accent-soft: rgba(30, 143, 137, 0.12);
+      --gold: #b7862f;
+      --warm-soft: rgba(183, 134, 47, 0.1);
+      --shadow-lg: 0 26px 70px rgba(18, 35, 60, 0.14);
+      --shadow-md: 0 16px 38px rgba(18, 35, 60, 0.08);
+      --radius-xl: 32px;
+      --radius-lg: 24px;
+      --radius-md: 18px;
+      --content: 1180px;
     }
 
     * {
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
+      position: relative;
       margin: 0;
-      font-family: "Segoe UI", "Aptos", "Helvetica Neue", sans-serif;
       color: var(--ink);
+      font-family: "Aptos", "Segoe UI", "Helvetica Neue", sans-serif;
       background:
-        radial-gradient(circle at top right, rgba(214, 108, 47, 0.18), transparent 24rem),
-        radial-gradient(circle at left center, rgba(13, 71, 161, 0.15), transparent 28rem),
-        linear-gradient(180deg, #fbf7ef 0%, var(--bg) 100%);
+        radial-gradient(circle at 12% 18%, rgba(30, 143, 137, 0.12), transparent 24rem),
+        radial-gradient(circle at 88% 8%, rgba(13, 71, 161, 0.16), transparent 24rem),
+        linear-gradient(180deg, #f7fbff 0%, #eef4fb 48%, #f7f3ec 100%);
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(255, 255, 255, 0.14) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.14) 1px, transparent 1px);
+      background-size: 32px 32px;
+      mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.45), transparent 80%);
+      opacity: 0.35;
     }
 
     a {
-      color: var(--brand);
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
     }
 
     .shell {
-      width: min(1100px, calc(100% - 32px));
+      width: min(var(--content), calc(100% - 32px));
       margin: 0 auto;
-      padding: 32px 0 56px;
     }
 
-    .hero {
-      padding: 28px;
-      border: 1px solid var(--line);
-      border-radius: 28px;
-      background: var(--panel);
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(10px);
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(18px);
+      background: rgba(247, 251, 255, 0.72);
+      border-bottom: 1px solid rgba(18, 35, 60, 0.06);
     }
 
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 8px 12px;
-      border-radius: 999px;
-      background: var(--brand-soft);
-      color: var(--brand);
-      font-size: 0.92rem;
-      font-weight: 700;
-      letter-spacing: 0.02em;
-      text-transform: uppercase;
-    }
-
-    h1, h2, h3 {
-      margin: 0;
-      line-height: 1.05;
-    }
-
-    h1 {
-      margin-top: 18px;
-      font-size: clamp(2.4rem, 5vw, 4.6rem);
-      max-width: 12ch;
-    }
-
-    .lead {
-      max-width: 62ch;
-      margin: 18px 0 0;
-      font-size: 1.08rem;
-      line-height: 1.7;
-      color: var(--muted);
-    }
-
-    .cta-row {
+    .topbar-inner {
       display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 24px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      min-height: 74px;
     }
 
+    .brand-lockup {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      min-width: 0;
+    }
+
+    .brand-mark {
+      width: 52px;
+      height: 52px;
+      padding: 10px;
+      border-radius: 18px;
+      background: linear-gradient(145deg, rgba(13, 71, 161, 0.16), rgba(255, 255, 255, 0.95));
+      box-shadow: var(--shadow-md);
+      flex: 0 0 auto;
+    }
+
+    .brand-text strong,
+    .brand-text span {
+      display: block;
+    }
+
+    .brand-text strong {
+      font-size: 1.05rem;
+      letter-spacing: 0.01em;
+    }
+
+    .brand-text span {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .topnav {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .nav-link,
     .button {
       display: inline-flex;
       align-items: center;
@@ -110,265 +154,979 @@
       min-height: 46px;
       padding: 0 18px;
       border-radius: 999px;
-      text-decoration: none;
       font-weight: 700;
-      border: 1px solid transparent;
+      transition: transform 140ms ease, background 140ms ease, box-shadow 140ms ease;
+    }
+
+    .nav-link {
+      color: var(--muted);
+    }
+
+    .nav-link:hover,
+    .button:hover {
+      transform: translateY(-1px);
     }
 
     .button-primary {
-      background: var(--brand);
       color: #fff;
+      background: linear-gradient(135deg, var(--brand), var(--brand-deep));
+      box-shadow: 0 14px 32px rgba(13, 71, 161, 0.22);
     }
 
     .button-secondary {
-      background: transparent;
       color: var(--ink);
-      border-color: var(--line);
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.84);
     }
 
-    .hero-grid,
-    .card-grid {
-      display: grid;
-      gap: 18px;
+    .button-ghost {
+      color: var(--brand);
+      background: var(--brand-soft);
+    }
+
+    .page {
+      padding: 28px 0 64px;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 38px;
+      border: 1px solid rgba(13, 71, 161, 0.08);
+      border-radius: var(--radius-xl);
+      background:
+        linear-gradient(145deg, rgba(255, 255, 255, 0.92), rgba(250, 252, 255, 0.76)),
+        linear-gradient(135deg, rgba(13, 71, 161, 0.08), rgba(30, 143, 137, 0.04));
+      box-shadow: var(--shadow-lg);
+    }
+
+    .hero::before,
+    .hero::after {
+      content: "";
+      position: absolute;
+      border-radius: 999px;
+      pointer-events: none;
+    }
+
+    .hero::before {
+      top: -7rem;
+      right: -4rem;
+      width: 18rem;
+      height: 18rem;
+      background: radial-gradient(circle, rgba(13, 71, 161, 0.12), transparent 70%);
+    }
+
+    .hero::after {
+      bottom: -8rem;
+      left: -6rem;
+      width: 20rem;
+      height: 20rem;
+      background: radial-gradient(circle, rgba(30, 143, 137, 0.1), transparent 72%);
     }
 
     .hero-grid {
-      margin-top: 28px;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      display: grid;
+      grid-template-columns: minmax(0, 1.12fr) minmax(300px, 0.88fr);
+      gap: 28px;
+      position: relative;
+      z-index: 1;
     }
 
-    .stat,
-    .card,
-    .seo-note {
-      border: 1px solid var(--line);
-      border-radius: 22px;
-      background: rgba(255, 255, 255, 0.82);
-      box-shadow: 0 12px 28px rgba(19, 32, 51, 0.07);
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: var(--brand-soft);
+      color: var(--brand);
+      font-size: 0.88rem;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
     }
 
-    .stat {
-      padding: 18px;
+    h1,
+    h2,
+    h3 {
+      margin: 0;
+      line-height: 1.04;
+      font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
     }
 
-    .stat strong {
+    h1 {
+      margin-top: 18px;
+      font-size: clamp(2.6rem, 5vw, 4.9rem);
+      max-width: 11ch;
+      letter-spacing: -0.03em;
+    }
+
+    .lead {
+      max-width: 60ch;
+      margin: 18px 0 0;
+      font-size: 1.08rem;
+      line-height: 1.72;
+      color: var(--muted);
+    }
+
+    .hero-note {
+      margin: 18px 0 0;
+      font-size: 0.98rem;
+      font-weight: 800;
+      letter-spacing: 0.01em;
+      color: var(--brand-deep);
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 26px;
+    }
+
+    .mini-proof {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 26px;
+    }
+
+    .mini-proof article {
+      position: relative;
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.78);
+      border: 1px solid rgba(18, 35, 60, 0.08);
+      overflow: hidden;
+    }
+
+    .mini-proof article::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto auto 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, var(--accent), var(--brand));
+    }
+
+    .mini-proof strong {
       display: block;
-      font-size: 1.7rem;
-      color: var(--accent);
+      margin-bottom: 6px;
+      font-size: 1.2rem;
+      color: var(--brand);
+    }
+
+    .mini-proof span {
+      color: var(--muted);
+      line-height: 1.45;
+      font-size: 0.95rem;
+    }
+
+    .occasion-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .occasion-pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 38px;
+      padding: 0 14px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.76);
+      border: 1px solid rgba(18, 35, 60, 0.08);
+      color: var(--muted);
+      font-size: 0.93rem;
+      font-weight: 700;
+    }
+
+    .hero-panel {
+      align-self: stretch;
+      display: grid;
+      gap: 16px;
+    }
+
+    .panel-card {
+      position: relative;
+      overflow: hidden;
+      padding: 22px;
+      border-radius: 24px;
+      background: linear-gradient(180deg, rgba(11, 34, 69, 0.95), rgba(13, 71, 161, 0.92));
+      color: #fff;
+      box-shadow: 0 24px 50px rgba(10, 49, 112, 0.26);
+    }
+
+    .panel-card::after {
+      content: "";
+      position: absolute;
+      right: -2rem;
+      bottom: -2rem;
+      width: 9rem;
+      height: 9rem;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.18), transparent 68%);
+    }
+
+    .panel-card h2 {
+      font-size: 1.35rem;
+      max-width: 14ch;
+    }
+
+    .panel-card p {
+      margin: 12px 0 0;
+      color: rgba(255, 255, 255, 0.82);
+      line-height: 1.65;
+    }
+
+    .stack {
+      display: grid;
+      gap: 12px;
+    }
+
+    .card-kicker,
+    .signal-label,
+    .section-kicker,
+    .feature-tag {
+      display: inline-flex;
+      align-items: center;
+      width: fit-content;
+      min-height: 30px;
+      padding: 0 12px;
+      border-radius: 999px;
+      font-size: 0.79rem;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .card-kicker,
+    .section-kicker,
+    .feature-tag {
+      background: rgba(255, 255, 255, 0.84);
+      color: var(--brand);
+      border: 1px solid rgba(13, 71, 161, 0.1);
+    }
+
+    .card-kicker.invert {
+      background: rgba(255, 255, 255, 0.12);
+      color: rgba(255, 255, 255, 0.92);
+      border-color: rgba(255, 255, 255, 0.14);
+    }
+
+    .signal {
+      position: relative;
+      padding: 16px 18px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.84);
+      border: 1px solid rgba(18, 35, 60, 0.08);
+      box-shadow: var(--shadow-md);
+    }
+
+    .signal strong {
+      display: block;
+      margin: 10px 0 6px;
+      font-size: 1rem;
+    }
+
+    .signal-label {
+      background: var(--warm-soft);
+      color: var(--gold);
+    }
+
+    .signal p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    .signal-quote {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(180deg, rgba(247, 251, 255, 0.96), rgba(255, 255, 255, 0.88));
+    }
+
+    .signal-quote::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 4px;
+      background: linear-gradient(180deg, var(--accent), var(--brand));
     }
 
     section {
-      margin-top: 32px;
+      margin-top: 42px;
     }
 
     .section-head {
       display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
+      gap: 16px;
       align-items: end;
       justify-content: space-between;
-      margin-bottom: 14px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
     }
 
     .section-head p {
       margin: 0;
-      max-width: 52ch;
+      max-width: 60ch;
       color: var(--muted);
-      line-height: 1.6;
+      line-height: 1.65;
     }
 
-    .card-grid {
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    .section-head h2 {
+      margin-top: 12px;
+      font-size: clamp(1.9rem, 3vw, 2.7rem);
     }
 
-    .card {
-      padding: 20px;
+    .comparison {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
     }
 
-    .card h3 {
-      margin-bottom: 10px;
-      font-size: 1.15rem;
+    .compare-card {
+      position: relative;
+      padding: 26px;
+      border-radius: 28px;
+      border: 1px solid var(--line);
+      background: var(--surface);
+      box-shadow: var(--shadow-md);
+      overflow: hidden;
     }
 
-    .card p,
-    .seo-note p,
-    .todo li {
+    .compare-card::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto auto 0;
+      width: 100%;
+      height: 5px;
+      background: linear-gradient(90deg, var(--accent), var(--brand));
+    }
+
+    .compare-card h3 {
+      font-size: 1.3rem;
+      margin: 14px 0;
+    }
+
+    .compare-card ul {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .compare-card li + li {
+      margin-top: 8px;
+    }
+
+    .compare-card.excel {
+      background: linear-gradient(180deg, rgba(255, 245, 241, 0.9), rgba(255, 255, 255, 0.84));
+    }
+
+    .compare-card.chorga {
+      background: linear-gradient(180deg, rgba(242, 249, 255, 0.96), rgba(255, 255, 255, 0.88));
+    }
+
+    .feature-grid,
+    .advantage-grid {
+      display: grid;
+      gap: 18px;
+    }
+
+    .feature-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .advantage-grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .feature-card,
+    .advantage-card,
+    .contact-card,
+    .legal-band {
+      position: relative;
+      overflow: hidden;
+      padding: 22px;
+      border-radius: 24px;
+      background: var(--surface-strong);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow-md);
+    }
+
+    .feature-card::before,
+    .advantage-card::before,
+    .contact-card::before,
+    .legal-band::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto auto 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, rgba(30, 143, 137, 0.9), rgba(13, 71, 161, 0.9));
+      opacity: 0.86;
+    }
+
+    .feature-card:hover,
+    .advantage-card:hover,
+    .compare-card:hover,
+    .contact-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 22px 48px rgba(18, 35, 60, 0.12);
+    }
+
+    .feature-icon,
+    .advantage-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 46px;
+      height: 46px;
+      border-radius: 16px;
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+
+    .feature-icon {
+      background: var(--brand-soft);
+      color: var(--brand);
+    }
+
+    .advantage-icon {
+      background: var(--accent-soft);
+      color: var(--accent);
+    }
+
+    .feature-card h3,
+    .advantage-card h3 {
+      margin: 12px 0 10px;
+      font-size: 1.14rem;
+    }
+
+    .feature-card p,
+    .advantage-card p,
+    .contact-card p,
+    .legal-band p {
       margin: 0;
       color: var(--muted);
       line-height: 1.65;
     }
 
-    .bullet-list {
-      margin: 14px 0 0;
-      padding-left: 18px;
-      color: var(--muted);
+    .split-callout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
+      gap: 18px;
     }
 
-    .bullet-list li + li {
-      margin-top: 8px;
+    .story-card {
+      position: relative;
+      overflow: hidden;
+      padding: 28px;
+      border-radius: 28px;
+      border: 1px solid rgba(18, 35, 60, 0.08);
+      background: linear-gradient(145deg, rgba(11, 34, 69, 0.96), rgba(13, 71, 161, 0.9));
+      color: #fff;
+      box-shadow: 0 22px 58px rgba(10, 49, 112, 0.26);
     }
 
-    .seo-note {
-      padding: 22px;
+    .story-card p {
+      margin: 12px 0 0;
+      color: rgba(255, 255, 255, 0.84);
+      line-height: 1.75;
+      max-width: 56ch;
     }
 
-    .todo {
+    .story-card .section-kicker {
+      background: rgba(255, 255, 255, 0.12);
+      color: rgba(255, 255, 255, 0.92);
+      border-color: rgba(255, 255, 255, 0.14);
+      margin-bottom: 16px;
+    }
+
+    .story-points {
+      display: grid;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .story-points div {
+      padding: 12px 14px;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.08);
+      color: rgba(255, 255, 255, 0.92);
+      line-height: 1.55;
+    }
+
+    .contact-card {
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(246, 249, 255, 0.9));
+    }
+
+    .contact-card h3 {
+      margin: 14px 0 10px;
+      font-size: 1.2rem;
+    }
+
+    .contact-list,
+    .legal-links {
+      display: grid;
+      gap: 10px;
       margin: 16px 0 0;
-      padding-left: 18px;
     }
 
-    .todo li + li {
-      margin-top: 10px;
+    .contact-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      min-height: 46px;
+      padding: 0 14px;
+      border-radius: 999px;
+      background: rgba(13, 71, 161, 0.08);
+      color: var(--brand);
+      font-weight: 700;
+      width: fit-content;
+    }
+
+    .legal-band h3 {
+      margin: 14px 0 10px;
+      font-size: 1.2rem;
+    }
+
+    .legal-link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      min-height: 62px;
+      padding: 14px 16px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.82);
+      border: 1px solid var(--line);
+      font-weight: 700;
+    }
+
+    .legal-link span {
+      display: block;
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 0.94rem;
+      font-weight: 500;
+      line-height: 1.45;
     }
 
     footer {
-      margin-top: 32px;
-      padding: 0 4px;
+      margin-top: 34px;
+      padding: 20px 0 4px;
       color: var(--muted);
       font-size: 0.95rem;
     }
 
-    @media (max-width: 720px) {
+    .footer-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .footer-links a {
+      font-weight: 700;
+      color: var(--ink);
+    }
+
+    @media (max-width: 1080px) {
+      .hero-grid,
+      .split-callout {
+        grid-template-columns: 1fr;
+      }
+
+      .feature-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .advantage-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 760px) {
       .shell {
-        width: min(100% - 20px, 1100px);
-        padding-top: 20px;
+        width: min(var(--content), calc(100% - 20px));
+      }
+
+      .page {
+        padding-top: 18px;
+      }
+
+      .topbar-inner {
+        min-height: 68px;
+        align-items: flex-start;
+        flex-direction: column;
+        justify-content: center;
+        padding: 10px 0;
+      }
+
+      .topnav {
+        width: 100%;
+        justify-content: flex-start;
       }
 
       .hero {
-        padding: 22px;
-        border-radius: 24px;
+        padding: 24px 20px;
       }
 
       h1 {
         max-width: none;
+      }
+
+      .mini-proof,
+      .comparison,
+      .feature-grid,
+      .advantage-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-row {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .card-kicker,
+      .signal-label,
+      .section-kicker,
+      .feature-tag {
+        font-size: 0.74rem;
+        letter-spacing: 0.05em;
       }
     }
   </style>
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "TechArticle",
-      "headline": "Chorga Funktionen",
-      "inLanguage": "de-DE",
+      "@type": "WebPage",
+      "name": "Chorga Funktionen",
       "url": "https://chorga-nak.de/funktionen/",
-      "about": {
-        "@type": "SoftwareApplication",
-        "name": "Chorga",
-        "applicationCategory": "BusinessApplication"
-      }
+      "description": "Produktseite zu Chorga mit Fokus auf Liedverwaltung, Proben, Gottesdienste, Termine, Rueckmeldungen und Rollen."
+    }
+  </script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Chorga",
+      "applicationCategory": "ProductivityApplication",
+      "operatingSystem": "Web, Android, iOS, Windows, macOS, Linux",
+      "url": "https://chorga-nak.de/",
+      "image": "https://chorga-nak.de/icons/Icon-512.png",
+      "description": "Chorga ist die Chor-App fuer Liedverwaltung, Proben, Gottesdienste, Termine, Rueckmeldungen und Organisation in Chören und Gemeinden."
+    }
+  </script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Chorga",
+          "item": "https://chorga-nak.de/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Funktionen",
+          "item": "https://chorga-nak.de/funktionen/"
+        }
+      ]
     }
   </script>
 </head>
 <body>
-  <main class="shell">
-    <section class="hero">
-      <span class="eyebrow">Chororganisation mit System</span>
-      <h1>Chorga verbindet Liedverwaltung, Termine und Kommunikation.</h1>
-      <p class="lead">
-        Chorga ist eine App für Chöre und Gemeinden, die musikalische Arbeit,
-        organisatorische Abläufe und interne Abstimmung in einer Oberfläche
-        zusammenführt. Die Plattform bündelt Lieddaten, Veranstaltungen,
-        Teilnahme-Rückmeldungen, Rollen und News in einem gemeinsamen Ablauf.
-      </p>
-      <div class="cta-row">
-        <a class="button button-primary" href="/">Zur Web-App</a>
-        <a class="button button-secondary" href="/register/">Registrierung</a>
-      </div>
-      <div class="hero-grid">
-        <article class="stat">
-          <strong>Lieder</strong>
-          Sammlung, Probenstand, Mappe, Tags, Kommentare und Aktivitätsdaten.
-        </article>
-        <article class="stat">
-          <strong>Termine</strong>
-          Planung von Proben, Gottesdiensten und weiteren Einsätzen mit Liedzuordnung.
-        </article>
-        <article class="stat">
-          <strong>Mitglieder</strong>
-          Einladungen, Rollen, Stimmlagen und Profile mit klaren Zuständigkeiten.
-        </article>
-      </div>
-    </section>
-
-    <section>
-      <div class="section-head">
-        <div>
-          <h2>Die wichtigsten Funktionen</h2>
+  <header class="topbar">
+    <div class="shell topbar-inner">
+      <a class="brand-lockup" href="/">
+        <img class="brand-mark" src="/icons/Icon-192.png" alt="Chorga Logo">
+        <div class="brand-text">
+          <strong>Chorga</strong>
+          <span>Digitale Chorverwaltung für Gemeinden und Ensembles</span>
         </div>
-        <p>Diese Seite ist bewusst statisch aufgebaut, damit Suchmaschinen die Inhalte ohne App-Bootstrap direkt crawlen können.</p>
-      </div>
-      <div class="card-grid">
-        <article class="card">
-          <h3>Liedverwaltung</h3>
-          <p>Chorga verwaltet Liednummer, Titel, Mappe, Probenstand, letzte Probe, letzter Einsatz, Kommentare und Tags in einer strukturierten Liste.</p>
-          <ul class="bullet-list">
-            <li>Suche, Filter und Sortierung für große Liedbestände</li>
-            <li>CSV-Import und CSV-Export für Sammelbearbeitung</li>
-            <li>Pflege von Lieblingsliedern und individuellen Ergänzungen</li>
-          </ul>
-        </article>
-        <article class="card">
-          <h3>Probenstand und Vorbereitung</h3>
-          <p>Der musikalische Fortschritt eines Liedes bleibt transparent. Verantwortliche sehen auf einen Blick, welche Stücke nur gesichtet, in Probe oder bereits einsatzbereit sind.</p>
-          <ul class="bullet-list">
-            <li>Probenstand direkt am Lied hinterlegt</li>
-            <li>Filterung der Liedliste nach aktuellem Stand</li>
-            <li>Nachvollziehbarkeit im News-Feed bei Änderungen</li>
-          </ul>
-        </article>
-        <article class="card">
-          <h3>Termine und Rückmeldungen</h3>
-          <p>Veranstaltungen können mit Liedern, Beschreibung, Typ und organisatorischen Angaben angelegt werden. Mitglieder melden ihre Teilnahme direkt in der App zurück.</p>
-          <ul class="bullet-list">
-            <li>Zusagen, Absagen und offene Rückmeldungen</li>
-            <li>Zuordnung von Liedern zu konkreten Einsätzen</li>
-            <li>Übersicht für Chorleitung und Organisation</li>
-          </ul>
-        </article>
-        <article class="card">
-          <h3>Mitglieder, Rollen und Berechtigungen</h3>
-          <p>Die App unterstützt feste Rollen und gezielte Berechtigungen, damit administrative und musikalische Aufgaben sauber getrennt bleiben.</p>
-          <ul class="bullet-list">
-            <li>Einladungen per E-Mail</li>
-            <li>Verwaltung von Stimmen, Hilfsstimmen und Profilen</li>
-            <li>Rechte für Admin, Leitung, Dirigat und Mitglieder</li>
-          </ul>
-        </article>
-        <article class="card">
-          <h3>News und Aktivitätsfeed</h3>
-          <p>Änderungen an Liedern, Terminen oder Mitgliedschaften werden im Feed sichtbar. So bleibt der Choralltag auch bei mehreren Verantwortlichen nachvollziehbar.</p>
-          <ul class="bullet-list">
-            <li>Systemmeldungen zu Änderungen und neuen Inhalten</li>
-            <li>Reaktionen auf Beiträge und Ankündigungen</li>
-            <li>Aktivitäten je Gemeinde transparent gebündelt</li>
-          </ul>
-        </article>
-        <article class="card">
-          <h3>Mehrere Gemeinden in einer App</h3>
-          <p>Nutzer können zwischen mehreren Gemeinden oder Ensembles wechseln, ohne sich jedes Mal neu anzumelden. Dadurch bleibt ein gemeinsamer Zugang für verschiedene Einsatzorte möglich.</p>
-          <ul class="bullet-list">
-            <li>Schneller Wechsel zwischen Gemeinden</li>
-            <li>Gemeindespezifische Inhalte und Daten</li>
-            <li>Geeignet für Leitung mit mehreren Verantwortungsbereichen</li>
-          </ul>
-        </article>
-      </div>
-    </section>
+      </a>
+      <nav class="topnav" aria-label="Seitenbereiche">
+        <a class="nav-link" href="#vorteile">Vorteile</a>
+        <a class="nav-link" href="#funktionen">Funktionen</a>
+        <a class="nav-link" href="#rechtliches">Rechtliches</a>
+        <a class="nav-link" href="#anfrage">Anfrage</a>
+        <a class="button button-primary" href="/anfrage/">Anfrage stellen</a>
+      </nav>
+    </div>
+  </header>
 
-    <section class="seo-note">
-      <h2>Warum diese Seite für Sichtbarkeit wichtig ist</h2>
-      <p>
-        Flutter-Web-Apps sind für Suchmaschinen oft schwerer lesbar als klassische HTML-Seiten. Diese Funktionsseite liefert daher crawlbaren Text, klare Überschriften, eigenständige Meta-Daten und eine eigene URL in der Sitemap. Das verbessert die technische Grundlage für Indexierung, ersetzt aber nicht die weiteren Schritte nach dem Deploy.
-      </p>
-      <ol class="todo">
-        <li>Die Domain in Google Search Console und Bing Webmaster Tools verifizieren.</li>
-        <li>Die neue Sitemap einreichen und die Seite <code>/funktionen/</code> zur Indexierung anstoßen.</li>
-        <li>Im Anschluss Suchanfragen, Klickrate und Indexierungsstatus beobachten.</li>
-      </ol>
-    </section>
+  <main class="page">
+    <div class="shell">
+      <section class="hero">
+        <div class="hero-grid">
+          <div>
+            <span class="eyebrow">Für Probe, Gottesdienst und Gemeindeleben</span>
+            <h1>Chorga bringt euer Liedgut, eure Proben und eure Gottesdienste in einen gemeinsamen Ablauf.</h1>
+            <p class="lead">
+              Chorga unterstützt die musikalische Arbeit in der Neuapostolischen Kirche mit klaren Abläufen
+              für Probe, Gottesdienst und weitere Einsätze im Gemeindeleben. Statt Excel-Dateien, Chatverläufen
+              und Einzelwissen arbeiten Chorleitung, Dirigat und Mitglieder mit demselben Stand.
+            </p>
+            <p class="hero-note">Weniger Tabellenpflege. Mehr Ruhe für musikalische Vorbereitung und ein gemeinsames Liedgut im Blick.</p>
+            <div class="cta-row">
+              <a class="button button-primary" href="/anfrage/">Chorga für eure Gemeinde anfragen</a>
+              <a class="button button-secondary" href="/">Zur Startseite</a>
+              <a class="button button-ghost" href="#funktionen">Funktionen ansehen</a>
+            </div>
+            <div class="occasion-row" aria-label="Einsatzbereiche">
+              <div class="occasion-pill">Probe</div>
+              <div class="occasion-pill">Gottesdienst</div>
+              <div class="occasion-pill">Konzert</div>
+              <div class="occasion-pill">Gemeindeleben</div>
+            </div>
+            <div class="mini-proof">
+              <article>
+                <strong>Euer Liedgut</strong>
+                <span>Lieder, Chormappen, Probenstand und Aktivitätsdaten bleiben an einem Ort aktuell.</span>
+              </article>
+              <article>
+                <strong>Für Probe und Gottesdienst</strong>
+                <span>Planung, Rückmeldungen und musikalische Vorbereitung greifen sauber ineinander.</span>
+              </article>
+              <article>
+                <strong>Gemeinschaft im Blick</strong>
+                <span>Leitung, Dirigat und Chor bleiben verlässlich verbunden statt über mehrere Kanäle verstreut.</span>
+              </article>
+            </div>
+          </div>
 
-    <footer>
-      Weitere nächste Schritte stehen in der Projektdatei <code>docs/post-deploy-visibility-todo.md</code>.
-    </footer>
+          <aside class="hero-panel">
+            <article class="panel-card">
+              <span class="card-kicker invert">Gemeinsam statt verstreut</span>
+              <h2>Für die musikalische Arbeit in der Gemeinde</h2>
+              <p>
+                Chorga ist nicht nur eine digitale Liedliste. Die Plattform verbindet Liedgut,
+                Termine, Rückmeldungen, Rollen und Neuigkeiten in einem zusammenhängenden Ablauf für euren Gemeindechor.
+              </p>
+            </article>
+            <div class="stack">
+              <article class="signal">
+                <span class="signal-label">01 Gemeinsamer Stand</span>
+                <strong>Die Stimme der Gemeinde braucht einen verlässlichen Stand</strong>
+                <p>Lieder, Einsätze und Rückmeldungen bleiben für Chor, Dirigat und Organisation auf demselben Kenntnisstand.</p>
+              </article>
+              <article class="signal">
+                <span class="signal-label">02 Klarer Ablauf</span>
+                <strong>Probe, Gottesdienst und Auftritt hängen direkt zusammen</strong>
+                <p>Lieder, Teilnahme und organisatorische Details sind dort verknüpft, wo sie im Gemeindeleben gebraucht werden.</p>
+              </article>
+              <article class="signal signal-quote">
+                <span class="signal-label">03 Mehr Ruhe</span>
+                <strong>Musik dient dem Gottesdienst. Chorga dient der Organisation dahinter.</strong>
+                <p>So bleibt mehr Ruhe für die eigentliche Vorbereitung und weniger Nebenarbeit rund um Dateien, Nachfragen und Absprachen.</p>
+              </article>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section id="vorteile">
+        <div class="section-head">
+          <div>
+            <span class="section-kicker">Warum es besser funktioniert</span>
+            <h2>Warum Chorga eure Gemeinde musikalisch spürbar entlastet</h2>
+          </div>
+          <p>
+            Tabellen sammeln Informationen. Chorga hilft dabei, musikalische Arbeit, Vorbereitung und Gemeinschaft an einem Ort zu ordnen.
+          </p>
+        </div>
+        <div class="comparison">
+          <article class="compare-card excel">
+            <span class="card-kicker">Heute oft</span>
+            <h3>Typische Excel-Realität</h3>
+            <ul>
+              <li>Mehrere Versionen derselben Liedliste auf verschiedenen Geräten</li>
+              <li>Probe, Gottesdienst und Kommentare laufen zusätzlich über Chat oder Telefon</li>
+              <li>Rückmeldungen müssen manuell übertragen oder nachgefragt werden</li>
+              <li>Probenstand, Chormappe und Einsätze werden oft in freien Spalten gepflegt</li>
+              <li>Es ist unklar, wer was ändern darf und welche Liste gerade die richtige ist</li>
+            </ul>
+          </article>
+          <article class="compare-card chorga">
+            <span class="card-kicker">Mit Chorga</span>
+            <h3>Was Chorga stattdessen bietet</h3>
+            <ul>
+              <li>Ein gemeinsamer Datenstand für Chorleitung, Dirigat und Mitglieder</li>
+              <li>Direkte Verbindung zwischen Liedern, Proben, Gottesdiensten, News und Teilnahme</li>
+              <li>Nachvollziehbare Änderungen statt stiller Datei-Versionen</li>
+              <li>Rechte und Rollen passend zur Verantwortung im Alltag</li>
+              <li>Weniger organisatorische Nebenarbeit und mehr Fokus auf Liedgut, Vorbereitung und Gemeinschaft</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-head">
+          <div>
+            <span class="section-kicker">Im Gemeindealltag</span>
+            <h2>Die praktischen Vorteile im Alltag</h2>
+          </div>
+          <p>Chorga nimmt genau die Stellen in den Blick, an denen Verwaltung heute Zeit kostet oder unsicher wird.</p>
+        </div>
+        <div class="advantage-grid">
+          <article class="advantage-card">
+            <div class="advantage-icon">01</div>
+            <h3>Liedgut und Chormappen im Griff</h3>
+            <p>Liednummer, Titel, Mappe, Kommentare, Tags und Aktivitätsdaten bleiben geordnet und jederzeit greifbar.</p>
+          </article>
+          <article class="advantage-card">
+            <div class="advantage-icon">02</div>
+            <h3>Weniger Nachfragen vor dem Gottesdienst</h3>
+            <p>Rückmeldungen zu Proben und Einsätzen laufen direkt in der App zusammen, statt in einzelnen Nachrichten zu verschwinden.</p>
+          </article>
+          <article class="advantage-card">
+            <div class="advantage-icon">03</div>
+            <h3>Chorleitung und Dirigat mit Klarheit</h3>
+            <p>Administratoren, Leitung, Dirigat und Mitglieder arbeiten mit den Rechten, die zu ihrer Aufgabe in der Gemeinde passen.</p>
+          </article>
+          <article class="advantage-card">
+            <div class="advantage-icon">04</div>
+            <h3>Neuigkeiten im Gemeindeleben</h3>
+            <p>Wichtige Anpassungen an Liedern, Terminen oder Mitgliedschaften erscheinen nachvollziehbar statt still im Hintergrund.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="funktionen">
+        <div class="section-head">
+          <div>
+            <span class="section-kicker">Was die Plattform kann</span>
+            <h2>Die wichtigsten Funktionen von Chorga</h2>
+          </div>
+          <p>Die Plattform deckt nicht nur einen Teilprozess ab, sondern den organisatorischen Kern der musikalischen Arbeit in der Gemeinde.</p>
+        </div>
+        <div class="feature-grid">
+          <article class="feature-card">
+            <span class="feature-tag">Liedgut</span>
+            <div class="feature-icon">♪</div>
+            <h3>Liedverwaltung mit musikalischem Kontext</h3>
+            <p>Lieder werden nicht nur gesammelt, sondern mit Probenstand, Chormappe, Aktivitätsdaten, Kommentaren und Tags geführt.</p>
+          </article>
+          <article class="feature-card">
+            <span class="feature-tag">Übernahme</span>
+            <div class="feature-icon">↺</div>
+            <h3>CSV-Import und Export</h3>
+            <p>Bestehende Liedlisten lassen sich übernehmen, prüfen und gesammelt weiterverarbeiten, ohne die Pflege komplett neu zu beginnen.</p>
+          </article>
+          <article class="feature-card">
+            <span class="feature-tag">Teilnahme</span>
+            <div class="feature-icon">✓</div>
+            <h3>Teilnahme und Rückmeldungen</h3>
+            <p>Mitglieder geben Zu- oder Absagen direkt zu Proben, Gottesdiensten und weiteren Terminen ab. Verantwortliche sehen den Stand sofort.</p>
+          </article>
+          <article class="feature-card">
+            <span class="feature-tag">Vorbereitung</span>
+            <div class="feature-icon">◎</div>
+            <h3>Probenstand statt Zusatzspalten</h3>
+            <p>Der Entwicklungsstand eines Liedes wird strukturiert gepflegt und kann für die musikalische Vorbereitung gezielt gefiltert werden.</p>
+          </article>
+          <article class="feature-card">
+            <span class="feature-tag">Verantwortung</span>
+            <div class="feature-icon">⚑</div>
+            <h3>Rollen und Berechtigungen</h3>
+            <p>Rechte für Verwaltung, Chorleitung, Dirigat und Mitglieder lassen sich sauber nach Verantwortungsbereich trennen.</p>
+          </article>
+          <article class="feature-card">
+            <span class="feature-tag">Aktualität</span>
+            <div class="feature-icon">✦</div>
+            <h3>Neuigkeiten und Aktivität</h3>
+            <p>Änderungen an Liedern, Terminen und Mitgliedschaften bleiben sichtbar, statt still in einer Datei überschrieben zu werden.</p>
+          </article>
+        </div>
+      </section>
+
+      <section>
+        <div class="split-callout">
+          <article class="story-card">
+            <span class="section-kicker">Für Gemeinden mit Anspruch</span>
+            <h2>Für Gemeinden und Chöre, die ihre musikalische Arbeit geordnet, verlässlich und gemeinsam tragen wollen</h2>
+            <p>
+              Chorga richtet sich am realen Ablauf von Chorarbeit in der Gemeinde aus: Liedgut muss gepflegt,
+              Probe und Gottesdienst müssen vorbereitet, Rückmeldungen eingeholt und Änderungen sauber kommuniziert werden.
+              Genau diese Übergänge zwischen Organisation, Gemeinschaft und musikalischer Vorbereitung werden digital zusammengeführt.
+            </p>
+            <div class="story-points">
+              <div>Ein neuer Gottesdienst oder eine Probe kann direkt mit Liedern, Verantwortlichen und Teilnahme verknüpft werden.</div>
+              <div>Ein geänderter Probenstand bleibt nicht in einer Einzeldatei verborgen, sondern für Chorleitung und Dirigat sichtbar.</div>
+              <div>Auch bei mehreren Einsatzorten bleibt der Zugang für die Beteiligten in einem gemeinsamen Ablauf erhalten.</div>
+            </div>
+          </article>
+
+          <aside class="contact-card" id="anfrage">
+            <span class="section-kicker">Nächster Schritt</span>
+            <h3>Interesse an Chorga?</h3>
+            <p>
+              Wenn du Chorga für euren Gemeindechor oder eure musikalische Arbeit kennenlernen möchtest,
+              sende einfach eine Anfrage. Wir melden uns persönlich zurück.
+            </p>
+            <div class="contact-list">
+              <a class="button button-primary" href="/anfrage/">Zur Anfrage-Seite</a>
+              <a class="contact-pill" href="mailto:opahlkoetter@chorga-nak.de">opahlkoetter@chorga-nak.de</a>
+              <a class="contact-pill" href="/">Zur Chorga-Startseite</a>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section id="rechtliches">
+        <div class="legal-band">
+          <span class="section-kicker">Öffentlich erreichbar</span>
+          <h3>Rechtliches</h3>
+          <p>
+            Impressum und Datenschutzerklärung sind als eigene öffentliche Seiten erreichbar und von den öffentlichen Einstiegsseiten aus verlinkt.
+          </p>
+          <div class="legal-links">
+            <a class="legal-link" href="/impressum/">
+              <div>
+                Impressum
+                <span>Angaben zum Diensteanbieter, Kontakt und rechtliche Hinweise.</span>
+              </div>
+              <strong>→</strong>
+            </a>
+            <a class="legal-link" href="/datenschutz/">
+              <div>
+                Datenschutz
+                <span>Informationen zur Datenverarbeitung bei Nutzung von Chorga.</span>
+              </div>
+              <strong>→</strong>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        <div class="footer-row">
+          <div>Chorga bündelt Liedverwaltung, Termine, Rückmeldungen und Zuständigkeiten in einer gemeinsamen digitalen Arbeitsoberfläche.</div>
+          <div class="footer-links">
+            <a href="/anfrage/">Anfrage</a>
+            <a href="/impressum/">Impressum</a>
+            <a href="/datenschutz/">Datenschutz</a>
+          </div>
+        </div>
+      </footer>
+    </div>
   </main>
 </body>
 </html>

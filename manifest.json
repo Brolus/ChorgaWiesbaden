@@ -7,7 +7,7 @@
     "display": "standalone",
     "background_color": "#FFFFFF",
     "theme_color": "#0D47A1",
-    "description": "Chor-App für Lieder, Termine, Rückmeldungen und Organisation.",
+    "description": "Chor-App für Liedverwaltung, Proben, Gottesdienste, Termine, Rückmeldungen und Organisation.",
     "lang": "de-DE",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
