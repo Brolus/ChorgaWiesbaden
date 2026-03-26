@@ -48,6 +48,7 @@
 
     html {
       scroll-behavior: smooth;
+      color-scheme: light dark;
     }
 
     body {
@@ -806,6 +807,112 @@
       .feature-tag {
         font-size: 0.74rem;
         letter-spacing: 0.05em;
+      }
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --ink: #edf4ff;
+        --muted: #a9b8cf;
+        --surface: rgba(13, 21, 35, 0.84);
+        --surface-strong: rgba(15, 24, 40, 0.92);
+        --line: rgba(173, 194, 224, 0.12);
+        --brand: #76a8ff;
+        --brand-deep: #3f7ae8;
+        --brand-soft: rgba(118, 168, 255, 0.16);
+        --accent: #58c9bc;
+        --accent-soft: rgba(88, 201, 188, 0.16);
+        --gold: #f2c775;
+        --warm-soft: rgba(242, 199, 117, 0.12);
+        --shadow-lg: 0 28px 70px rgba(0, 0, 0, 0.42);
+        --shadow-md: 0 16px 36px rgba(0, 0, 0, 0.28);
+      }
+
+      body {
+        background:
+          radial-gradient(circle at 12% 18%, rgba(88, 201, 188, 0.18), transparent 24rem),
+          radial-gradient(circle at 88% 8%, rgba(118, 168, 255, 0.2), transparent 24rem),
+          linear-gradient(180deg, #08111f 0%, #0a1423 52%, #12131b 100%);
+      }
+
+      body::before {
+        background-image:
+          linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+        opacity: 0.22;
+      }
+
+      .topbar {
+        background: rgba(8, 13, 24, 0.76);
+        border-bottom-color: rgba(173, 194, 224, 0.08);
+      }
+
+      .brand-mark {
+        background: linear-gradient(145deg, rgba(118, 168, 255, 0.18), rgba(18, 28, 45, 0.95));
+      }
+
+      .button-secondary,
+      .occasion-pill,
+      .mini-proof article,
+      .signal,
+      .legal-link {
+        background: rgba(14, 22, 37, 0.84);
+      }
+
+      .button-secondary {
+        color: var(--ink);
+      }
+
+      .hero {
+        border-color: rgba(118, 168, 255, 0.12);
+        background:
+          linear-gradient(145deg, rgba(13, 21, 35, 0.94), rgba(10, 16, 28, 0.9)),
+          linear-gradient(135deg, rgba(118, 168, 255, 0.1), rgba(88, 201, 188, 0.05));
+      }
+
+      .hero-note {
+        color: #cfe0ff;
+      }
+
+      .card-kicker,
+      .section-kicker,
+      .feature-tag {
+        background: rgba(18, 31, 52, 0.88);
+        color: #bcd4ff;
+        border-color: rgba(118, 168, 255, 0.18);
+      }
+
+      .signal-quote {
+        background: linear-gradient(180deg, rgba(14, 24, 40, 0.96), rgba(11, 20, 34, 0.9));
+      }
+
+      .compare-card.excel {
+        background: linear-gradient(180deg, rgba(45, 22, 20, 0.82), rgba(17, 21, 29, 0.92));
+      }
+
+      .compare-card.chorga {
+        background: linear-gradient(180deg, rgba(12, 28, 46, 0.92), rgba(12, 20, 34, 0.9));
+      }
+
+      .contact-card {
+        background: linear-gradient(180deg, rgba(14, 24, 40, 0.96), rgba(12, 20, 34, 0.92));
+      }
+
+      .contact-pill {
+        background: rgba(118, 168, 255, 0.16);
+        color: #d7e6ff;
+      }
+
+      .legal-link span,
+      .footer-links a {
+        color: var(--muted);
+      }
+
+      .feature-card:hover,
+      .advantage-card:hover,
+      .compare-card:hover,
+      .contact-card:hover {
+        box-shadow: 0 24px 52px rgba(0, 0, 0, 0.34);
       }
     }
   </style>
