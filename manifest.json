@@ -1,0 +1,43 @@
+{
+    "name": "Chorga",
+    "short_name": "Chorga",
+    "id": "/",
+    "start_url": "/",
+    "scope": "/",
+    "display": "standalone",
+    "background_color": "#FFFFFF",
+    "theme_color": "#0D47A1",
+    "description": "Chor-App für Lieder, Termine, Rückmeldungen und Organisation.",
+    "lang": "de-DE",
+    "orientation": "portrait-primary",
+    "prefer_related_applications": false,
+    "categories": [
+        "music",
+        "productivity",
+        "utilities"
+    ],
+    "icons": [
+        {
+            "src": "icons/Icon-192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "icons/Icon-512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        },
+        {
+            "src": "icons/Icon-maskable-192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "maskable"
+        },
+        {
+            "src": "icons/Icon-maskable-512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "maskable"
+        }
+    ]
+}
